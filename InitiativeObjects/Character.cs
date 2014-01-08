@@ -5,13 +5,16 @@ using System.Text;
 
 namespace InitiativeObjects
 {
-    class Character
+    public class Character
     {
         public string name;
         public int maxHP;
         public int currentHP;
         public int AC;
         public int InitiativeMod;
+        public int Initiative;
+        public int initrolloff;
+
         
         public Character(string name, int hp, int ac, int init)
         {
@@ -26,9 +29,31 @@ namespace InitiativeObjects
         {
             return name;
         }
+       
     }
 
-    class Combat
+    public class InitiativeSort : Comparer<Character>
+    {
+        public override int Compare(Character y, Character x)
+        {
+            if (x.Initiative.CompareTo(y.Initiative) != 0)
+            {
+                return x.Initiative.CompareTo(y.Initiative);
+            }
+            else if (x.InitiativeMod.CompareTo(y.InitiativeMod) != 0)
+            {
+                return x.InitiativeMod.CompareTo(y.InitiativeMod);
+            }
+            else
+            {
+                return 0;
+            }
+
+        }
+    }
+
+
+    public class Combat
     {
         public int round;
         public Queue<Character> InitiativeList;
@@ -37,7 +62,7 @@ namespace InitiativeObjects
         public List<Character> PlayerCharacters;
         public List<Character> NonPlayerCharacters;
         public List<Character> Enemies;
-
+        public List<Character> Combatants;
         public Combat()
         {
             InitiativeList = new Queue<Character>();
@@ -46,6 +71,7 @@ namespace InitiativeObjects
             PlayerCharacters = new List<Character>();
             NonPlayerCharacters = new List<Character>();
             Enemies = new List<Character>();
+            Combatants = new List<Character>();
         }
     }
 }
