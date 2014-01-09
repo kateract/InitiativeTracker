@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InitiativeTrackerConsole", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InitiativeObjects", "InitiativeObjects\InitiativeObjects.csproj", "{2B5345E7-B7DF-4387-8CBF-F9E3B0D0C146}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InitiativeTracker", "InitiativeTracker\InitiativeTracker.csproj", "{9744EF32-6C0D-478A-AA71-A7989A915343}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{2B5345E7-B7DF-4387-8CBF-F9E3B0D0C146}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B5345E7-B7DF-4387-8CBF-F9E3B0D0C146}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B5345E7-B7DF-4387-8CBF-F9E3B0D0C146}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9744EF32-6C0D-478A-AA71-A7989A915343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9744EF32-6C0D-478A-AA71-A7989A915343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9744EF32-6C0D-478A-AA71-A7989A915343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9744EF32-6C0D-478A-AA71-A7989A915343}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

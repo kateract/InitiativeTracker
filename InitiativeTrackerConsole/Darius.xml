@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Character type ="Pathfinder">
+	<Meta>
+		<Name>Darius Stukov</Name>
+		<PlayerName>Brian Shelledy</PlayerName>
+		<Race>Drakkon</Race>
+		<Class>
+			<Fighter>2</Fighter>
+		</Class>
+		<Gender>Male</Gender>
+		<Age></Age>
+		<Weight></Weight>
+	</Meta>
+	<Background>
+		
+	</Background>
+	<Atributes>
+		<Statistics>
+			<Strength>18</Strength>
+			<Dexterity>16</Dexterity>
+			<Constitution>14</Constitution>
+			<Inteligence>10</Inteligence>
+			<Wisdom>9</Wisdom>
+			<Charisma>8</Charisma>
+		</Statistics>
+		<Skills>
+			
+		</Skills>
+	</Atributes>
+</Character>

@@ -38,9 +38,10 @@ namespace InitiativeTrackerConsole
             {
                 Console.Write(item.ToString() + " Initiative Total = ");
                 input = Console.ReadLine();
-                if (int.TryParse(input, out item.Initiative))
+                int output;
+                if (int.TryParse(input, out output))
                 {
-
+                    item.Initiative = output;
                 }
                 else
                 {
@@ -64,11 +65,17 @@ namespace InitiativeTrackerConsole
                     int copies;
                     if(int.TryParse(input, out copies))
                     {
-                        for (int i = 0; i < copies; i++)
+                        if (copies > 1)
                         {
-                            c.Enemies.Add(new Character(parts[0] + (copies > 1 ? " " + (i + 1).ToString() : ""), int.Parse(parts[1]), int.Parse(parts[2]), int.Parse(parts[3])));
+                            InitiativeGroup g = new InitiativeGroup(parts[0] + "s (" + copies.ToString() + ")", int.Parse(parts[3]));
+                            for (int i = 0; i < copies; i++)
+                            {
+                                g.Add(new Character(parts[0] + " " + (i + 1).ToString(), int.Parse(parts[1]), int.Parse(parts[2]), int.Parse(parts[3])));
+                            }
+                            c.Enemies.Add(g);
                         }
-                        
+                        else
+                            c.Enemies.Add(new Character(parts[0], int.Parse(parts[1]), int.Parse(parts[2]), int.Parse(parts[3])));
                     }
                     else
                     {
@@ -78,13 +85,14 @@ namespace InitiativeTrackerConsole
             }
             while (!sr.EndOfStream);
             sr.Close();
-            foreach (Character item in c.Enemies)
+            foreach (IInitiative item in c.Enemies)
             {
                 Console.Write(item.ToString() + " Initiative Total = ");
                 input = Console.ReadLine();
-                if (int.TryParse(input, out item.Initiative))
+                int output;
+                if (int.TryParse(input, out output))
                 {
-
+                    item.Initiative = output;
                 }
                 else
                 {
@@ -96,9 +104,9 @@ namespace InitiativeTrackerConsole
             c.Combatants.AddRange(c.Enemies);
             c.Combatants.Sort(new InitiativeSort());
 
-            foreach (Character item in c.Combatants)
+            foreach (var item in c.Combatants)
             {
-                Console.WriteLine(item.ToString() + " " + item.Initiative.ToString() + " " + item.InitiativeMod.ToString() + " " + item.initrolloff.ToString());
+                Console.WriteLine(item.ToString() + " \t" + item.Initiative.ToString() + " " + item.InitiativeMod.ToString() + " " + item.initrolloff.ToString());
                 c.InitiativeList.Enqueue(item);
             }
             Console.ReadLine();
@@ -108,3 +116,4 @@ namespace InitiativeTrackerConsole
      
     }
 }
+    
